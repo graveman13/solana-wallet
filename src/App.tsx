@@ -13,7 +13,6 @@ function App() {
 
   return (
     <div className="app">
-      121
       <Header />
 
       {!connected ? (

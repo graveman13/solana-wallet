@@ -36,10 +36,19 @@ function randomNonce() {
 }
 
 export function useAuth() {
-  const { publicKey, signMessage, connected, disconnect } = useWallet()
+  const { publicKey, signMessage, connected, disconnect, wallets, wallet } = useWallet()
   const [session, setSession] = useState<AuthSession | null>(loadSession)
   const [error, setError] = useState<string | null>(null)
   const [signing, setSigning] = useState(false)
+
+  console.log(wallets)
+
+  const phantomWallet = wallets.find((w) => w.adapter.name === 'Phantom')
+
+  if (phantomWallet) {
+    console.log(phantomWallet)
+    console.log(phantomWallet.adapter.eventNames)
+  }
 
   useEffect(() => {
     if (!connected && session) {
