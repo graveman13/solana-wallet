@@ -12,7 +12,7 @@ export function Header() {
     <header className="header">
       <div className="brand">
         <span className="brand-dot" />
-        solpump<span style={{ color: 'var(--muted)' }}>.clone</span>
+        solana<span style={{ color: 'var(--muted)' }}>.wallet</span>
       </div>
       <div className="header-right">
         {connected && address && (
