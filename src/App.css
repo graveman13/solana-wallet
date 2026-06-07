@@ -1,0 +1,190 @@
+.app {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: rgba(18, 23, 35, 0.7);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  position: sticky;
+  top: 16px;
+  z-index: 5;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  font-size: 18px;
+}
+
+.brand-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 0 18px rgba(124, 92, 255, 0.6);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.balance-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+}
+.balance-pill b { color: var(--accent-2); }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+@media (max-width: 920px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.panel h3 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.row { display: flex; gap: 10px; align-items: center; }
+.col { display: flex; flex-direction: column; gap: 10px; }
+
+.btn {
+  appearance: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--panel-2);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  transition: transform 0.05s ease, background 0.15s ease;
+}
+.btn:hover { background: #222a3d; }
+.btn:active { transform: translateY(1px); }
+.btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), #5d3ef0);
+  border: none;
+  color: white;
+}
+.btn-primary:hover { background: linear-gradient(135deg, #8a6cff, #6d4ef0); }
+
+.btn-ghost { background: transparent; }
+
+.addr {
+  font-family: ui-monospace, Consolas, monospace;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.tokens {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 280px;
+  overflow: auto;
+}
+.token {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 14px;
+}
+.token .mint { color: var(--muted); font-family: ui-monospace, monospace; font-size: 12px; }
+
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 300px;
+  overflow: auto;
+}
+.hist-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 10px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+}
+.hist-row .err { color: var(--danger); }
+.hist-row .ok { color: var(--accent-2); }
+
+.muted { color: var(--muted); font-size: 13px; }
+.error { color: var(--danger); font-size: 13px; }
+.success { color: var(--accent-2); font-size: 13px; word-break: break-all; }
+
+.tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.tab {
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 13px;
+}
+.tab.active {
+  background: var(--panel-2);
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 4px;
+  display: block;
+}
+
+.hero { text-align: center; padding: 40px 20px; }
+.hero h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  margin: 0 0 12px;
+  background: linear-gradient(135deg, #fff, #b8a8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.hero p { color: var(--muted); max-width: 520px; margin: 0 auto; }
